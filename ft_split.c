@@ -6,7 +6,7 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:17:33 by stmuller          #+#    #+#             */
-/*   Updated: 2025/10/17 13:14:02 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/10/17 23:42:33 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,17 @@ char	**ft_split(char const *s, char c)
 
 static char	**ft_failed(char **str, size_t n)
 {
-	while (n > 0)
+	size_t	i;
+
+	i = 0;
+	while (str[i])
 	{
-		free((void *)str[n]);
-		n--;
+		free(str[n]);
+		i++;
 	}
-	free((void *)str[n]);
+	free(str[i]);
 	free(str);
-	return (0);
+	return (NULL);
 }
 
 static int	ft_wordscounter(char const *s, char c)

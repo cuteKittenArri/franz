@@ -6,7 +6,7 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 00:12:12 by stmuller          #+#    #+#             */
-/*   Updated: 2025/10/08 17:23:54 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/10/17 23:33:50 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	s = (const unsigned char *)src;
 	leer = (unsigned char *)dest;
 	i = 0;
+	if (!dest)
+		return (NULL);
 	while (i < n)
 	{
 		leer[i] = s[i];

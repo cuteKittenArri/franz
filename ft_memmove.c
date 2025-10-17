@@ -6,7 +6,7 @@
 /*   By: stmuller <stmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 01:26:04 by stmuller          #+#    #+#             */
-/*   Updated: 2025/10/11 14:48:16 by stmuller         ###   ########.fr       */
+/*   Updated: 2025/10/17 23:36:28 by stmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*dstcpy;
 	const unsigned char	*srccpy;
 
+	if (!dest || !src)
+		return (NULL);
 	i = 0;
 	dstcpy = (unsigned char *)dest;
 	srccpy = (const unsigned char *)src;
